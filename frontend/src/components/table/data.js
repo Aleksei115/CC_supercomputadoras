@@ -1,17 +1,3 @@
-import React from "react";
-
-const columns = [
-  { name: "RANKING", uid: "rank" },
-  { name: "NOMBRE", uid: "nombre" },
-  { name: "PAÍS DE ORIGEN", uid: "pais"},
-  { name: "NODOS", uid: "nodos" },
-  { name: "# CORES", uid: "num_cores" },
-  { name: "CANTIDAD RAM", uid: "num_ram_tb" },
-  { name: "ALMACENAMIENTO", uid: "almacenamiento_tb" },
-  { name: "TERAFLOPS", uid: "teraflops" },
-  { name: "SISTEMA OPERATIVO", uid: "sistema_operativo" },
-  { name: "ACCIONES", uid: "acciones" },
-];
 
 const users = [
   {

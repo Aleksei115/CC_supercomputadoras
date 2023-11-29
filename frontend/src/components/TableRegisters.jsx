@@ -3,7 +3,6 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, User, C
 import {EditIcon} from "./EditIcon";
 import {DeleteIcon} from "./DeleteIcon";
 import {EyeIcon} from "./EyeIcon";
-import {columns, users} from "./table/data";
 
 
 const statusColorMap = {
@@ -12,7 +11,20 @@ const statusColorMap = {
   vacation: "warning",
 };
 
-const TableRegisters = () => {
+const columns = [
+  { name: "RANKING", uid: "rank" },
+  { name: "NOMBRE", uid: "nombre" },
+  { name: "PAÍS DE ORIGEN", uid: "pais"},
+  { name: "NODOS", uid: "nodos" },
+  { name: "# CORES", uid: "num_cores" },
+  { name: "CANTIDAD RAM", uid: "num_ram_tb" },
+  { name: "ALMACENAMIENTO", uid: "almacenamiento_tb" },
+  { name: "TERAFLOPS", uid: "teraflops" },
+  { name: "SISTEMA OPERATIVO", uid: "sistema_operativo" },
+  { name: "ACCIONES", uid: "acciones" },
+];
+
+const TableRegisters = ({ dataComputers }) => {
 
 
     const renderCell = React.useCallback((user, columnKey) => {
@@ -40,6 +52,8 @@ const TableRegisters = () => {
     }, []);
 
 
+
+
     return (
         <div className="w-[80%]">
             <Table aria-label="Example table with custom cells">
@@ -50,7 +64,7 @@ const TableRegisters = () => {
                     </TableColumn>
                     )}
                 </TableHeader>
-                <TableBody items={users} emptyContent={"Sin datos para mostrar."}>
+                <TableBody items={dataComputers} emptyContent={"Sin datos para mostrar."}>
                     {(item) => (
                     <TableRow key={item.id}>
                         {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
